@@ -18,21 +18,21 @@ public:
 	char* __repr__();
 	bool GetNumberFromFile(const char* FileName);
 	bool SaveNumberToFile(const char* FileName);
-	bool GetNumberFromBinFile(const char* FileName); // надо переделать
+	bool GetNumberFromBinFile(const char* FileName);
 	bool SaveNumberInBinFile(const char* FileName);
 
     bool Odd(); // для быстрого возведения в степень
 
 
-	bigNumber& operator=(const bigNumber& RightHandValue);
+	bigNumber operator=(const bigNumber& RightHandValue);
     
-	bigNumber& operator+(const bigNumber& right) const;
-	bigNumber& operator-() const;
-	bigNumber& operator-(const bigNumber& right) const;
-	bigNumber& operator*(const bigNumber& right) const;
-	bigNumber& operator/(const bigNumber& right) const;
-	bigNumber& operator%(const bigNumber& right) const;
-	bigNumber& operator^(const bigNumber& right) const;
+	bigNumber operator+(const bigNumber& right) const;
+	bigNumber operator-() const;
+	bigNumber operator-(const bigNumber& right) const;
+	bigNumber operator*(const bigNumber& right) const;
+	bigNumber operator/(const bigNumber& right) const;
+	bigNumber operator%(const bigNumber& right) const;
+	bigNumber operator^(const bigNumber& right) const;
 
 
 	bool operator>(const bigNumber& B);
@@ -76,9 +76,9 @@ private:
 	long long int _Compare(const bigNumber& B);
 	void _ShiftLeft(int s);
 
-	bigNumber& _Sum_and_Sub(const bigNumber& left, const bigNumber& right) const;
-	bigNumber& _Multiplication(const bigNumber A, const bigNumber B) const;
-	bigNumber& _Division(const bigNumber& A, const bigNumber& B, bigNumber &remainder) const;
+	bigNumber _Sum_and_Sub(const bigNumber& left, const bigNumber& right) const;
+	bigNumber _Multiplication(const bigNumber A, const bigNumber B) const;
+	bigNumber _Division(const bigNumber& A, const bigNumber& B, bigNumber &remainder) const;
 
     friend bigNumber GenerateRandomLen(int bitLen);
     friend bigNumber GenerateRandomMax(bigNumber max);
